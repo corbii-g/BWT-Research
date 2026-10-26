@@ -37,3 +37,5 @@ Scrivere la relazione tecnica.
    - `na$bana` - (e)
    - `banana$` - (f)
    - `nana$ba` - (g)
+5. Seleziona l'output:
+   - `annba$a`
