@@ -52,9 +52,11 @@ def get_reverse_bwt(bwt_string):
     ordered_bwt_list = sort_list(reverse_bwt_list)
     output= ""
 
+    print("list: ", reverse_bwt_list, "ordered: ", ordered_bwt_list)
+
     for i in len(reverse_bwt_list):
         ...
-    
+    return output
 
 if __name__ == "__main__":
     a = str(input("Inserisci una stringa: "))
