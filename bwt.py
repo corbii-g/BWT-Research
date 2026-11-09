@@ -49,14 +49,20 @@ def sort_list(bwt_list):
 def get_reverse_bwt(bwt_string):
     
     reverse_bwt_list = list(bwt_string)
-    ordered_bwt_list = sort_list(reverse_bwt_list)
-    output= ""
+    output= [""] * len(reverse_bwt_list)
 
-    print("list: ", reverse_bwt_list, "ordered: ", ordered_bwt_list)
+    for _ in range(len(reverse_bwt_list)):
 
-    for i in len(reverse_bwt_list):
-        ...
-    return output
+        new_list = []
+
+        for i in range(len(reverse_bwt_list)):
+
+            new_string = reverse_bwt_list[i] + output[i]
+            new_list.append(new_string)
+
+        output = sort_list(new_list)
+
+    return output[0]
 
 if __name__ == "__main__":
     a = str(input("Inserisci una stringa: "))
