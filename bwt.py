@@ -3,8 +3,13 @@ def print_list(list):
         print(list[i])
     print()
 
-def create_bwt_list(bwt_string):
-    new_string = bwt_string + "$"
+def create_bwt_list(bwt_string: str):
+
+    if (not bwt_string.endswith("$")):
+        new_string = bwt_string + "$"
+    else:
+        new_string = bwt_string;
+    
     bwt_list = [new_string]
 
     for i in range(len(bwt_string)):
