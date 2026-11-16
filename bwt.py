@@ -17,7 +17,7 @@ def create_bwt_list(bwt_string: str):
         bwt_list.append(new_string)
     return bwt_list
 
-def get_bwt(bwt_list):
+def get_last_digits(bwt_list):
     output = ""
     for i in range(len(bwt_list)):
         output += bwt_list[i][-1]
@@ -72,7 +72,7 @@ def get_reverse_bwt(bwt_string):
 def get_bwt_from_string(string):
     bwt_list = create_bwt_list(string)
     bwt_list = sort_list(bwt_list)
-    return get_bwt(bwt_list)
+    return get_last_digits(bwt_list)
 
 if __name__ == "__main__":
     a = str(input("Inserisci una stringa: "))
@@ -84,5 +84,5 @@ if __name__ == "__main__":
     print("sorted:")
     print_list(a_list)
 
-    print("Output:",get_bwt(a_list))
-    print("Reverse Output:",get_reverse_bwt(get_bwt(a_list)))
+    print("Output:",get_last_digits(a_list))
+    print("Reverse Output:",get_reverse_bwt(get_last_digits(a_list)))
