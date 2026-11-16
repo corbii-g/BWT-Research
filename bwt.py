@@ -69,6 +69,11 @@ def get_reverse_bwt(bwt_string):
 
     return output[0]
 
+def get_bwt_from_string(string):
+    bwt_list = create_bwt_list(string)
+    bwt_list = sort_list(bwt_list)
+    return get_bwt(bwt_list)
+
 if __name__ == "__main__":
     a = str(input("Inserisci una stringa: "))
 
