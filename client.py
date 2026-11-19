@@ -13,4 +13,4 @@ def client(string):
         
 
 if __name__ == "__main__":
-    client(input("Stringa: "))
+    print(client(input("Stringa: ")))
