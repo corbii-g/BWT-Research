@@ -11,14 +11,18 @@ with soc.socket(soc.AF_INET, soc.SOCK_STREAM) as server_soc:
     while True:
         client_soc, client_addr = server_soc.accept()
     
-        while client_soc:
-            print("Connessione con:", client_addr)
-            data =  client_soc.recv(1024)
+        with client_soc:
+                print("Connessione con:", client_addr)
+                data = client_soc.recv(1024)
 
-            string = data.decode("utf-8")
-            print("Stringa ricevuta:", string)
+                string = data.decode("utf-8")
+                print("Stringa ricevuta:", string)
 
-            bwt_string = get_bwt(string)
-            client_soc.sendall(bwt_string.encode("utf-8"))
+                bwt_string = get_bwt(string)
+                client_soc.sendall(bwt_string.encode("utf-8"))
+                print("Stringa BWT inviata:", bwt_string)
 
-            print("Stringa BWT inviata: ", bwt_string)
+                # segnala al client che hai finito di inviare
+                client_soc.shutdown(soc.SHUT_WR)
+        
+                client_soc.close()
